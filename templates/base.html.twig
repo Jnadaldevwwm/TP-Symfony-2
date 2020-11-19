@@ -7,7 +7,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <header>
+        {# <header>
             <div id='logo'>
                 <img src='images/logo2.png' alt='logo'>
                 <h1> Sucré Salé </h1>
@@ -16,8 +16,22 @@
                 <a href=''>Accueil</a>
                 <a href=''>Recettes</a>
             </nav>
-        </header>
+        </header> #}
+        <header>
+            <div id='hamburger'>
+                <img src='images/burger2.png' alt='burger'>
+            </div>
+            <div id="logo">
+                <img src='images/logo2.png' alt='logo'>
+            </div>
+            <div id='searchBar'>
+                recherche
+            </div>
+            <div id='login'>
+            connexion
+            </div>
 
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

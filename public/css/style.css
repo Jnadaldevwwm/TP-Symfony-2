@@ -23,7 +23,6 @@ header {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
     padding: 10px 25px 10px 25px;
     background-color: #b7d7e8;
     box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.64);
@@ -33,12 +32,73 @@ nav a {
     color: black;
     margin-right: 15px;
 }
+#hamburger{
+    width: 10%;
+}
+#hamburger img{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all .5s;
+}
+#hamburger img:hover{
+    width: 62px;
+    height: 62px;
+}
+#logo{
+    width: 20%;
+    display: flex;
+    flex-flow: row wrap;
+}
+#searchBar{
+    width: 60%;
+}
+#login{
+    width: 10%;
+}
 #logo img {
     width: 80px;
     height: 80px;
     margin-right: 25px;
 }
-#logo{
+/***************** Accueil *****************/
+#accueilContent{
+    background-color: white;
+    width: 90%;
+    margin-top: 50px;
+    padding: 50px 10% 50px 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+}
+#zoneSearch{
+    width: 60%;
+    background-color: #daebe8;
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px 25px 15px;
+    border-radius: 10px;
+}
+#zoneSearch h2{
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+}
+#zoneSearch form{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+#zoneSearch form input[type='text']{
+    width: 80%;
+    margin-bottom: 15px;
+}
+#zoneSearch form input[type='submit']{
+    border: #f55719 2px solid;
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    background-color:  #daebe8 ;
 }

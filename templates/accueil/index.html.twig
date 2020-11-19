@@ -3,5 +3,21 @@
 {% block title %}Sucré Salé - Recettes de cuisine{% endblock %}
 
 {% block body %}
-
+    <section id='accueilContent'>
+        <div id='zoneSearch'>
+            <h2>Chercher recette</h2>
+            <form action='' method='GET'>
+                <input type='text' name='nomRecette' placeholder='Nom de la recette'>
+                <input type='text' name='ingredient' placeholder='Ingrédient'>
+                <input type='submit' value='Chercher la recette'>
+        </div>
+        <div id='recettesRadom'>
+            {% for recette in randomRecettes %}
+                <div class='recetteRand'>
+                    <img src='images/{{ recette.visuel }}'>
+                    <h2>{{ recette.nom|capitalize }}</h2>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
