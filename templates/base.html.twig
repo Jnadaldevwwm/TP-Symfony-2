@@ -4,8 +4,20 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
+        <header>
+            <div id='logo'>
+                <img src='images/logo2.png' alt='logo'>
+                <h1> Sucré Salé </h1>
+            </div>
+            <nav>
+                <a href=''>Accueil</a>
+                <a href=''>Recettes</a>
+            </nav>
+        </header>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
