@@ -5,9 +5,10 @@
 #daebe8 gris jaune
 */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 *{
     box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
 }
 body{
     margin: 0;
@@ -50,9 +51,31 @@ nav a {
     display: flex;
     flex-flow: row wrap;
 }
+
 #searchBar{
     width: 60%;
 }
+#searchBar form{
+    width: 95%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px #87bdd8 solid;
+}
+#searchBar form input{
+    width: 90%;
+    border: none;
+    text-align: right;
+}
+#searchBar form input:focus{
+    outline: none;
+}
+#searchBar form button{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
 #login{
     width: 10%;
 }
@@ -101,4 +124,53 @@ nav a {
     padding: 5px 15px 5px 15px;
     border-radius: 5px;
     background-color:  #daebe8 ;
+}
+
+#recettesRadom{
+    width: 60%;
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+#recettesRadom h2{
+    width: 100%;
+}
+.recetteRand{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 40%;
+    border: dotted  #87bdd8 1px;
+    border-radius: 15px;
+    padding: 10px;
+}
+.imgCardRecette{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    border: 1px #87bdd8 solid;
+    border-radius: 15px;
+}
+.recetteRand img{
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    max-width:400px;
+    max-height:500px;
+    width: auto;
+    height: auto;
+    margin: auto; 
+}
+.recetteRand button{
+    cursor: pointer;
+    border: 1px #87bdd8 solid;
+    border-radius: 15px;
+    padding: 5px 15px 5px 15px;
+}
+.recetteRand {
+    text-align: center;
 }
