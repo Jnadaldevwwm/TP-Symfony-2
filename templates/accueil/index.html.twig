@@ -4,26 +4,33 @@
 
 {% block body %}
     <section id='accueilContent'>
-        <div id='zoneSearch'>
-            <h2>Chercher recette</h2>
-            <form action='' method='GET'>
-                <input type='text' name='nomRecette' placeholder='Nom de la recette'>
-                <input type='text' name='ingredient' placeholder='Ingrédient'>
-                <input type='submit' value='Chercher la recette'>
-        </div>
-        <div id='recettesRadom'>
-            <h2> Recettes au hasard </h2>
-            {% for recette in randomRecettes %}
-                <div class='recetteRand'>
-                    <div class='imgCardRecette'>
-                        <img src='images/{{ recette.visuel }}'>
+        <div id='zoneGauche'>
+            <div id='zoneSearch'>
+                <h2>Chercher recette</h2>
+                <form action='' method='GET'>
+                    <input type='text' name='nomRecette' placeholder='Nom de la recette'>
+                    <input type='text' name='ingredient' placeholder='Ingrédient'>
+                    <input type='submit' value='Chercher la recette'>
+                </form>
+            </div>
+            
+            <div id='recettesRadom'>
+                <h2> Recettes au hasard </h2>
+                {% for recette in randomRecettes %}
+                    <div class='recetteRand'>
+                        <div class='imgCardRecette'>
+                            <img src='images/{{ recette.visuel }}'>
+                        </div>
+                        <h3>{{ recette.nom|capitalize }}</h3>
+                        <a href='/recette?recetteId={{ recette.id }}'>
+                            <button>Voir la recette</button>
+                        </a>
                     </div>
-                    <h3>{{ recette.nom|capitalize }}</h3>
-                    <a href=''>
-                        <button>Voir la recette</button>
-                    </a>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
+        <aside>
+        blalblablalblala
+        </aside>
     </section>
 {% endblock %}

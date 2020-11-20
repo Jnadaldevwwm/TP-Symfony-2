@@ -38,10 +38,24 @@ header {
     background-color: #b7d7e8;
     box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.64);
 }
+nav{
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    top: 104px;
+    left: 0px;
+    padding: 25px 25px 20px 35px;
+    background-color: #b7d7e8;
+    flex-flow: column wrap;
+    border-right: 1px solid #87bdd8;
+    border-bottom: 1px solid #87bdd8;
+    border-bottom-right-radius: 15px;
+}
 nav a {
     text-decoration: none;
     color: black;
     margin-right: 15px;
+    margin-bottom: 25px;
 }
 #hamburger{
     width: 10%;
@@ -66,9 +80,10 @@ nav a {
     width: 60%;
 }
 #searchBar form{
+    display: flex;
     width: 95%;
     background-color: white;
-    padding: 5px;
+    padding: 5px 0 5px 5px;
     border-radius: 5px;
     border: 1px #87bdd8 solid;
 }
@@ -84,6 +99,7 @@ nav a {
     cursor: pointer;
     border: none;
     background-color: white;
+    padding-right:0 ;
 }
 
 #login{
@@ -94,8 +110,23 @@ nav a {
     height: 80px;
     margin-right: 25px;
 }
+#loupe{
+    width: 20px;
+    height: 20px;
+}
 /***************** Accueil *****************/
+aside{
+    width: 25%;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+}
+#zoneGauche{
+    width: 70%;
+}
 #accueilContent{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     background-color: white;
     width: 90%;
     margin-top: 50px;
@@ -105,7 +136,7 @@ nav a {
     border-radius: 15px;
 }
 #zoneSearch{
-    width: 60%;
+    width: 100%;
     background-color: #daebe8;
     display: flex;
     flex-flow: row wrap;
@@ -137,7 +168,7 @@ nav a {
 }
 
 #recettesRadom{
-    width: 60%;
+    width: 100%;
     margin-top: 50px;
     display: flex;
     flex-flow: row wrap;
@@ -148,7 +179,7 @@ nav a {
 }
 .recetteRand{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
     width: 40%;
     border: dotted  #87bdd8 1px;
