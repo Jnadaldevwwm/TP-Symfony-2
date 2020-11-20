@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat Recherche{% endblock %}
+
+{% block body %}
+    <h2 class='textCenter'> Résulat de la recherche : </h2>
+     {% for recette in resultRecettes %}
+                <div class='recetteRand'>
+                    <div class='imgCardRecette'>
+                        <img src='images/{{ recette.visuel }}'>
+                    </div>
+                    <h3>{{ recette.nom|capitalize }}</h3>
+                    <a href=''>
+                        <button>Voir la recette</button>
+                    </a>
+                </div>
+    {% endfor %}
+{% endblock %}

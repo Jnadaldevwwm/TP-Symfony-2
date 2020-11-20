@@ -47,4 +47,15 @@ class RecettesRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function searchRecetteByKeys($keysArray){
+        $em = $this->getEntityManager();
+        $dql = 'SELECT r FROM App\Entity\Recettes r WHERE r.nom LIKE \'%'.$keysArray[0].'%\'';
+        $result = $em->createQuery($dql);
+        if(isset($result)){
+            return $result->getResult();
+        } else {
+            return 'Pas de recette trouvée';
+        }
+    }
 }
