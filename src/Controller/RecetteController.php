@@ -14,8 +14,17 @@ class RecetteController extends AbstractController
     /**
      * @Route("/recette", name="recette")
      */
-    public function index(): Response
+    public function index(Request $rq): Response
     {
+        if($rq->isMethod('GET')){
+            $recetteId = $rq->query->get('recetteId');
+            $recette = $this->getDoctrine()
+                            ->getRepository('App\Entity\Recettes')
+                            ->find($recetteId);
+            return $this->render('recette/index.html.twig', [
+                'controller_name' => 'RecetteController', 'recette' => $recette
+            ]);
+        }
         return $this->render('recette/index.html.twig', [
             'controller_name' => 'RecetteController',
         ]);
@@ -31,14 +40,17 @@ class RecetteController extends AbstractController
         if($rq->isMethod('POST')){
             $searchKeyWords = $rq->request->get('searchKeyWords');
             $arrayKeyWords = explode(' ', $searchKeyWords);
-            $recettes = $this->getDoctrine()->getRepository('App\Entity\Recettes')->searchRecetteByKeys($arrayKeyWords);
+            $recettes = $this->getDoctrine()
+                            ->getRepository('App\Entity\Recettes')
+                            ->searchRecetteByKeys($arrayKeyWords);
+            return $this->render('recette/search.html.twig', ['controller_name' => 'RecetteController', 'resultRecettes' => $recettes
+                    ]);
+        } else {
+            return $this->render('recette/search.html.twig', ['controller_name' => 'RecetteController', 'resultRecettes' => 'Pas de recette'
+                    ]);
         }
 
-
-
-
-        return $this->render('recette/search.html.twig', ['controller_name' => 'RecetteController', 'resultRecettes' => $recettes
-        ]);
+        
      }
 
 }
